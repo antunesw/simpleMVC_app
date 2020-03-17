@@ -11,4 +11,18 @@ package simplemvc_app;
  */
 public class CalcModel {
     
+    private int calcValue;
+
+    public void addNumbers(int firstValue , int secondValue){
+    
+        calcValue = firstValue + secondValue;
+        
+    }
+
+        public int getValue (){
+        
+            return calcValue;
+        }
+        
+        
 }

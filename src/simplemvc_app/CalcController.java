@@ -11,4 +11,22 @@ package simplemvc_app;
  */
 public class CalcController {
     
+    private CalcView theView;
+    private CalcModel theModel;
+    
+    
+    public CalcController( CalcView theView, CalcModel theModel){
+    
+       this.theView = theView;
+       this.theModel = theModel;
+    
+       this.theView.addCalcListener( new CalcListener());
+    }
+
+    class CalcListener implements Actionlistener{
+    
+    public void actionPerformed(ActionEvent arg0){}
+    
+    }
 }
+
