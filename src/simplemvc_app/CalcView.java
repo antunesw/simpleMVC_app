@@ -12,15 +12,15 @@ public class CalcView extends JFrame {
     
 private JTextField firstNumber = new JTextField(10);
 private JLabel additionLabel = new JLabel("+");
-private JTextField secondNumber = new JTextField("10");
-private JButton calcButton = new JButton ();
-private JTextField calcSolution = new JTextField ("10");
+private JTextField secondNumber = new JTextField(10);
+private JButton calcButton = new JButton ("Calculate");
+private JTextField calcSolution = new JTextField (10);
 
     CalcView (){
     
         JPanel calcPanel = new JPanel ();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(600,200);
+        this.setSize(600,150);
         
         calcPanel.add(firstNumber);
         calcPanel.add(additionLabel);
@@ -52,9 +52,9 @@ private JTextField calcSolution = new JTextField ("10");
     
     }
     
-    void addCalcListener(ActionListener listenForCalcButton){
+    void addCalcListener(ActionListener listenerForCalcButton){
     
-        calculateButton.addActionlistener(listenerForCalcButton);
+        calcButton.addActionListener(listenerForCalcButton);
         
     }
     

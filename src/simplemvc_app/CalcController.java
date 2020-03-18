@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package simplemvc_app;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -23,10 +25,29 @@ public class CalcController {
        this.theView.addCalcListener( new CalcListener());
     }
 
-    class CalcListener implements Actionlistener{
-    
-    public void actionPerformed(ActionEvent arg0){}
-    
-    }
+   class CalcListener implements ActionListener{
+
+
+      @Override
+      public void actionPerformed(ActionEvent ae) {
+          int firstNumber,secondNumber = 0;
+
+          try{
+          
+              firstNumber = theView.getFirstNumber();
+              secondNumber = theView.getSecondNumber();
+              
+              theModel.addNumbers(firstNumber, secondNumber);
+         
+              theView.setCalcSolution(theModel.getValue());
+          }
+            catch(NumberFormatException ex){
+                theView.displayErrorMessage("Enter two integers");
+            }
+      
+      }
+   
+   
+   }
 }
 
